@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Helios Offline</title><meta name="viewport" content="width=device-width,initial-scale=1"><script type="systemjs-importmap">{
+  "imports": {
+    "single-spa": "./assets/single-spa.dev.js",
+    "@ab/p-dashboard": "./assets/ab-p-dashboard.js",
+    "react": "./assets/react.development.min.js",
+    "react-dom": "./assets/react-dom.development.min.js",
+    "material-ui": "./assets/material-ui.development.js",
+    "@ab/theme": "./assets/ab-theme.js",
+    "@ab/nav": "./assets/ab-nav.js",
+    "@ab/w-balance-card": "./assets/ab-w-balance-card.js",
+    "@ab/w-card-spend": "./assets/ab-w-card-spend.js"
+  }
+}</script><meta name="importmap-type" content="systemjs-importmap"><script src="./assets/import-map-overrides.js"></script><script>if (typeof fetch === 'undefined') {
+        document.write('<script src="./assets/fetch.umd.js"><\/script>')
+      }
+      if (typeof String.prototype.startsWith === 'undefined' || typeof Promise === 'undefined') {
+        document.write('<script src="./assets/polyfill.min.js"><\/script>')
+      }</script><script src="./assets/runtime.min.js"></script><script src="./assets/system.js"></script><script src="./assets/amd.js"></script><script>System.import('single-spa').then(function (singleSpa) {
+  singleSpa.registerApplication({
+    name: '@ab/p-dashboard',
+    app: function () {
+      return System.import('@ab/p-dashboard');
+    },
+    activeWhen: ["/"],
+    customProps: {}
+  });
+  if (!window.location.pathname.startsWith('/')) {
+    singleSpa.navigateToUrl('/');
+  }
+  singleSpa.start({"urlRerouteOnly":true});
+});</script></head><body></body></html>
